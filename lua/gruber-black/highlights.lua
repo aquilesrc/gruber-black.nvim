@@ -13,13 +13,6 @@ local function bg(color)
     return color
 end
 
-local function cursor_color()
-    if opts.colored_cursor then
-        return colors.accent1
-    end
-    return colors.fg
-end
-
 function M.load()
     local set_hl = vim.api.nvim_set_hl
 
@@ -100,7 +93,7 @@ function M.load()
     ---------------
     -- Neovim UI --
     ---------------
-    set_hl(0, "Cursor", { bg = cursor_color(), fg = colors.bg })
+    set_hl(0, "Cursor", { bg = colors.accent1, fg = colors.bg })
     set_hl(0, "CursorLine", { bg = colors.dark_gray })
     set_hl(0, "CursorLineNr", { fg = colors.accent1 })
     set_hl(0, "LineNr", { fg = colors.light_gray })
